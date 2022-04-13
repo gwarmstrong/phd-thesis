@@ -7,32 +7,32 @@
 %
 
 
-%% REQUIRED FIELDS -- Replace with the values appropriate to you
+% REQUIRED FIELDS -- Replace with the values appropriate to you
 
 % No symbols, formulas, superscripts, or Greek letters are allowed
 % in your title.
-\title{Statistical Representations Of Microbial Systems}
+\title{Benchmarking and Acceleration of Machine Learning and Analytics Pipelines for Large Microbiome Datasets}
 
-\author{Yoshiki V\'azquez Baeza}
-\degreeyear{2017}
+\author{George Wesley Armstrong}
+\degreeyear{2022}
 
 % Master's Degree theses will NOT be formatted properly with this file.
 \degreetitle{Doctor of Philosophy} 
 
-\field{Computer Science}
+\field{Bioinformatics and Systems Biology}
 \chair{Professor Rob Knight}
 % Uncomment the next line iff you have a Co-Chair
 % \cochair{Professor Cochair Semimaster} 
 %
 % Or, uncomment the next line iff you have two equal Co-Chairs.
 %\cochairs{Professor Chair Masterish}{Professor Chair Masterish}
+\cochair{Professor Pieter Dorrestein}
 
 %  The rest of the committee members  must be alphabetized by last name.
 \othermembers{
-Professor Pieter Dorrestein\\
-Professor  Rachel Dutton\\
-Professor  Jim Hollan\\
-Professor Larry Smarr\\
+Professor Vineet Bafna\\
+Professor  Gal Mishne\\
+Professor  Glenn Tesler\\
 }
 \numberofmembers{5} % |chair| + |cochair| + |othermembers|
 
@@ -63,7 +63,7 @@ Professor Larry Smarr\\
 %
 %
 \begin{dedication} 
-	To my parents, my family and my friends.
+	To my parents, family, and friends.
 \end{dedication}
 
 % You are responsible for formatting here.
@@ -93,14 +93,10 @@ Professor Larry Smarr\\
 
 % The style file will position the text for you.
 \begin{epigraph} 
-  \emph{The purpose of computing is insight, not numbers}\\
-  ---Richard Hamming
+  \emph{Computers are good at following instructions, but not at reading your mind. }\\
+  ---Donald Knuth
 
     \vspace{2.3in}
-
-    \begin{center}
-        \includegraphics[scale=0.28]{yoshiki}
-    \end{center}
 
 \end{epigraph}
 
@@ -121,7 +117,7 @@ Professor Larry Smarr\\
 }
 %% end hack
 
-\printglossary[title=List of Abbreviations,toctitle=List of Abbreviations,nonumberlist ]
+% \printglossary[title=List of Abbreviations,toctitle=List of Abbreviations,nonumberlist ]
 \listoffigures  % Uncomment if you have any figures
 \listoftables   % Uncomment if you have any tables
 
@@ -135,146 +131,26 @@ Professor Larry Smarr\\
 %
 \begin{acknowledgements}
 
-    The work in this thesis rests upon the shoulders of giants. Over the past 
-    four years these magnificent giants facilitated, enabled, motivated, and 
-    supported me.  In what follows, I seek to acknowledge the most personally 
-    transcendent and quintessential people to the realization of this thesis.
+Firstly, I would like to thank my parents, Douglas and Marjory Armstrong, for prioritizing education and doing everything within their power for over two and a half decades to empower me to achieve my goals. I would not be in this position today if it had not been for their ongoing love and support.
 
-    First of all thanks to my committee, for their comments, for their useful
-    feedback and for their willingness to participate in the creation of this
-    somewhat unorthodox thesis (Pieter Dorrestein, Rachel Dutton, Jim Hollan 
-    and Larry Smarr).
+I would also like to recognize my loving partner, teammate, and confidant, Connie Chiang, who has unconditionally encouraged me to pursue my passions and been there to see me through some of the most difficult aspects of the last few years.
 
-    During these years, I grew as a person and scientist surrounded by dozens 
-    of stellar role models. The \textit{Knight Laboratory} was the epicenter of 
-    my development. At its core, there's a group that keeps the lab moving 
-    financially and logistically. (Ulla Westerman, Jerry Kennedy, Gail 
-    Ackermann, Jeff DeReus, Michiko Souza, and Sarah Adams). The next layer is 
-    composed by a jovial, diverse, and clever swarm of graduate students.  They 
-    were my peers and are the fuel steering scientific developments around the 
-    world. (Luke Ursell, Will VanTreuren, John Chase, Adam Robbins-Pianka, 
-    Justine Debelius, Joshua Shorenstein, Meg Pirrung, Sam Way, Jose Antonio 
-    Navas-Molina, Sophie Weiss, Lisa Marotz, Alex Washburne, Tony Walters, 
-    Anupriya Tripathi, Alison Vrbanac, Serene Lingjing Jiang, Jamie Morton, 
-    Bryn Taylor and Jake Minich). Postdoctoral researchers in the 
-    \textit{Knight Laboratory} are role models and drivers of change. Without 
-    them mistakes are made, wheels are re-invented, and progress is slowed 
-    down. Their mentoring and advice was essential for my scientific 
-    realization. (Juan Manuel Peralta, Sejin Song, Jon Sanders, Daniel 
-    McDonald, Greg Caporaso, Tomasz Kosciolek, Jose Carlos Clemente Litran, 
-    Jesse Stombaugh, Catherine Lozupone, Jessica Metcalf, Laura Parfrey, 
-    Embriette Hyde, Zhenjiang Xu, Luke Thompson, Chris Callewaert, Stefan 
-    Janssen, Christian Lauber, Jenya Kopylov, Amnon Amir and Qiyun Zhu).  They 
-    say it is very easy to notice inadequate work, and hard to notice 
-    flawlessly executed work. By that definition, one would never be able to 
-    perceive the army of efficient scientists working in the wet lab.  Their 
-    hard work is what makes computational analysis easy, not computers.  (Greg 
-    Humphrey, Donna Berg-Lyons, Grant Gogul, James Gaffney, Elaine Wolfe, 
-    Caitriona Brennan, Rodolfo Antonio Salido Ben\'itez, Karenina Sanders and 
-    Lindsay DeRight Goldasich).
+Working on a Ph. D. and figuring out what to do next has been the largest, least-structured challenge I have encountered to date. For  that reason, I would like to thank my advisor, Rob Knight for providing his expertise, rational outlook, and flexibility. This work, along with my next steps, would not have been possible without him.
 
-    It goes without saying that Rob Knight, my advisor, has had a major role in 
-    making this thesis a reality. The magnitude of his support is a perfect 
-    match to his contagious enthusiasm and scientific curiosity. I am most 
-    grateful for his constant efforts to give me a unique graduate experience.
+Mentorship does not just come from a single source---I also received invaluable and immeasurable support from Yoshiki V\'azquez-Baeza, Cameron Martino, and Daniel McDonald. Many others I crossed paths with in the Knight Lab have also made this work possible through miscellaneous conversations, encouragement, and friendship: Gibraan Rahman, Dan Hakim, Marcus Fedarko, Imran McGrath, Kalen Cantrell, Lisa Marotz, Celeste Allaband, Justin Shaffer, Antonio Gonzalez Pena, and Shi Huang.
 
-    Moving to a different country can be an intimidating experience. Without 
-    careful moral and professional guidance, you can feel lost and constantly 
-    confused. Antonio, Lucia, and Edgar knew this and without hesitation helped 
-    me as much as they could. It truly is impossible to think where I would be 
-    without their support.
+A doctoral dissertation is not complete without a committee---I would like to thank my committee members Gal Mishne, Glenn Tesler, Pieter Dorrestein, and Vineet Bafna for their collaboration and encouragement on this work.
 
-    Thanks to my friends Santiago and David for always being beacons of 
-    inspiration and clarity. Special thanks to my girlfriend Sarah (and the 
-    scruffiest most lovable dog, Joni) for her help improving the quality of 
-    this document, and for her personal and professional support.
+Finally, I would like to extend my gratitude to many people from various stages of life who have contributed to this work influencing the path I took to get here: Ahmet Ay, Will Cipolli, Darren Strash, Michael Hay, Duke Writer, Dan Crowe, Diana Virgo, Sundaram Thirukkurungudi, Ben Apple, Tanner Gill, Ha Vu, Ben Harris, Adam Officer, Owen Chapman, and the 2018 BISB/BMI cohort.
 
-    The force behind my parents' (\textit{Jefesaurios}) will to drive my 
-    self-actualization is never-ending and full of love. As such, I have become 
-    a person fond of personal development and progress. The impact and 
-    importance of this work should fundamentally be credited to them.
+Chapter~\ref{chapter_review}, in full, is a reprint of the material as it appears in ``Applications and Comparison of Dimensionality Reduction Methods for Microbiome Data.'' George Armstrong, Gibraan Rahman, Cameron Martino, Daniel McDonald, Antonio Gonzalez, Gal Mishne, and Rob Knight. \textit{Frontiers in Bioinformatics 2}, 2022. The dissertation author was the primary investigator and co-first author of this paper.
 
-    Chapter 1, in full, is a reprint of the material as it appears in ``Impacts 
-    of the human gut microbiome in therapeutics''. Y.  V\'azquez-Baeza, C.  
-    Callewaert, J. Debelius, E. Hyde, C.  Marotz, J. T.  Morton, A. Swafford, 
-    A. Vrbanac, P. C.  Dorrestein and R.  Knight.  \emph{Annual Review of 
-    Pharmacology and Toxicology, 2017}. 58, 2017. The dissertation author was 
-    the primary investigator and author of this paper.
+Chapter~\ref{chapter_faiths_pd}, in full, is a reprint of the material as it appears in ``Efficient computation of Faith's phylogenetic diversity with applications in characterizing microbiomes.'' George Armstrong, Kalen Cantrell, Shi Huang, Daniel McDonald, Niina Haiminen, Anna Paola Carrieri, Qiyun Zhu, Antonio Gonzalez, Imran McGrath, Kristen Beck, Daniel Hakim, Aki S Havulinna, Guillaume Méric, Teemu Niiranen, Leo Lahti, Veikko Salomaa, Mohit Jain, Michael Inouye, Austin D Swafford, Ho-Cheol Kim, Laxmi Parida, Yoshiki Vázquez-Baeza and Rob Knight. \textit{Genome Research 31}, 2021. The dissertation author was the primary investigator and the first author of this paper.
 
-    Chapter~\ref{section_emperor}, in full, is a reprint of the material as it 
-    appears in ``Emperor: a tool for visualizing high throughput microbial 
-    community data''. Y. V\'azquez-Baeza, A. Gonzalez, M. Pirrung, R.  Knight.  
-    \emph{GigaScience}, 2, 2013 The dissertation author was the primary 
-    investigator and author of this paper. In addition, we thank Jackson Chen, 
-    Jai Ram Rideout, Daniel McDonald, William Van Treuren, Jose Antonio 
-    Navas\hyp{}Molina, Nickolas A. Bokulich, Adam Robbins\hyp{}Pianka and Greg 
-    Caporaso for feedback and useful discussion regarding the design and 
-    implementation of the software package. This work was supported in part by 
-    the National Institutes of Health, the Crohns and Colitis Foundation of 
-    America, the Alfred P. Sloan Foundation, and the Howard Hughes Medical 
-    Institute. The dissertation author was the primary investigator and 
-    author of this paper.
+Chapter~\ref{chapter_umap}, in full, is a reprint of the material as it appears in ``Uniform Manifold Approximation and Projection (UMAP) Reveals Composite Patterns and Resolves Visualization Artifacts in Microbiome Data.'' George Armstrong, Cameron Martino, Gibraan Rahman, Antonio Gonzalez, Yoshiki Vázquez-Baeza, Gal Mishne, and Rob Knight.  \textit{mSystems 6}, 2021. The dissertation author was the primary investigator and the first author of this paper.
 
-    Chapter~\ref{section_animations}, in full, is a reprint of the material as 
-    it appears in ``Bringing the Dynamic Microbiome to Life with Animations''.  
-    Y.  V\'azquez-Baeza, A. Gonzalez, L. Smarr, D.  McDonald, J.  T. Morton, J.  
-    A.  Navas-Molina, R. Knight. \emph{Cell Host and Microbe}, 11, 2017. The 
-    dissertation author was the primary investigator and author of this 
-    paper.
+Chapter~\ref{chapter_host_filtering}, in full, is a reprint of the material as it appears in ``Swapping metagenomics preprocessing pipeline components offers speed and sensitivity increases.'' George Armstrong, Cameron Martino, Justin Morris, Behnam Khaleghi, Jaeyoung Kang, Jeff DeReus, Qiyun Zhu, Daniel Roush, Daniel McDonald, Antonio Gonzalez, Justin Shaffer, Carolina Carpenter, Mehrbod Estaki, Stephen Wandro, Sean Eilert, Ameen Akel, Justin Eno, Ken Curewitz, Austin D. Swafford, Niema Moshiri, Tajana Rosing, and Rob Knight. \textit{mSystems e0137821}, 2022. The dissertation author was a primary investigator and co-first author of this paper.
 
-    Chapter~\ref{dogs}, in full, is a reprint of the material as it appears in 
-    ``Dog and human inflammatory bowel disease rely on overlapping yet distinct 
-    dysbiosis networks''. Y. V\'azquez-Baeza, E. R. Hyde, J. S.  Suchodolski, 
-    R. Knight.  \emph{Nature Microbiology}, 1, 2016. The dissertation 
-    author was the primary investigator and author of this paper. We wish to 
-    acknowledge the support provided by the Crohn's and Colitis Foundation of 
-    American; the Templeton Foundation and the Keck Foundation (via the Earth 
-    Microbiome Project), the National institutes of Health. We wish to thank 
-    Zhenjiang Xu, Jon Sanders, Amnon Amir, Gail Ackermann, Jamie Morton, Luke 
-    Ursell, Jessica Metcalf, Antonio Gonzalez and Emma Schwager for their 
-    useful comments and feedback in the writing of this manuscript. 
-
-    Chapter~\ref{section_plane}, in full, is a reprint of the material as it 
-    appears in ``Dynamics of the human gut microbiome in inflammatory bowel 
-    disease''.  J. Halfvarson, C. J. Brislawn, R. Lamendella, Y.  
-    V\'azquez-Baeza, W. A. Walters, L. M. Bramer, M. D'Amato, F.  Bonfiglio, D.  
-    McDonald, A. Gonzalez, E. E. McClure, M. F. Dunklebarger, R. Knight, J.  K.  
-    Jansson. \emph{Nature Microbiology}, 2, 2017. The dissertation 
-    author was the primary analyst and a co-author of this paper.
-
-    Chapter~\ref{section_ibd}, in full, is a reprint of the material as it 
-    appears in ``Guiding longitudinal sampling in inflammatory bowel diseases 
-    cohorts''. Y. V\'azquez-Baeza, A. Gonzalez, Z. Zech Xu, A. Washburne, H.  
-    Herfarth, R.  B.  Sartor, R. Knight. \emph{Gut}. 2017. The 
-    dissertation author was the primary investigator and author of this 
-    paper. We acknowledge grant support by NIH (P01-DK094779), the Crohn's and 
-    Colitis Foundation, and the research coordinators of the UNC 
-    Multidisciplinary IBD Center at UNC for patient recruitment. Additionally, 
-    we thank Gail Ackermann, Jamie Morton and Justin Silverman for their 
-    invaluable feedback and discussion provided in the preparation of this 
-    manuscript.
-
-    Chapter~\ref{section_moviefmt}, in full, is a reprint of the material as it 
-    appears in ``Dynamic changes in short- and long-term bacterial composition 
-    following fecal microbiota transplantation for recurrent Clostridium 
-    difficile infection''.  A. Weingarden, A. Gonzalez, Y.  V\'azquez-Baeza, S.  
-    Weiss, G.  Humphry, D. Berg-Lyons, D. Knights, T.  Unno, A. Bobr, J.  Kang, 
-    A. Khoruts, R. Knight, M. J. Sadowsky. \emph{Microbiome}. 3, 2015.  The 
-    dissertation author was a co-primary investigator and author of this 
-    paper. This research was supported, in part, by NIH Grant R21AI091907 (to 
-    AK and MJS). ARW was supported by a Doctoral Dissertation Fellowship from 
-    the University of Minnesota Graduate School and by the Dennis W.  Watson 
-    Fellowship in Microbiology. Work done in the Knight lab was funded by the 
-    NIH, Crohn's \& Colitis Foundation of America, and the HHMI.  
-
-    Chapter~\ref{section_fmt}, in full, is a reprint of the material as it 
-    appears in ``Changes in microbial ecology after fecal microbiota 
-    transplantation for recurrent C. difficile infection affected by underlying 
-    inflammatory bowel disease''. S. Khanna, Y.  V\'azquez-Baeza, A.  Gonzalez, 
-    S. Weiss, B.  Schmidt, D. A.  Muñiz-Pedrogo, J. F. Rainey 3rd, P. Kammer, 
-    H. Nelson, M.  Sadowsky, A.  Khoruts, S. L. Farrugia, R. Knight, D. S.  
-    Pardi, P. C.  Kashyap. \emph{Microbiome}. 5, 2017. The dissertation author 
-    was the co-primary investigator and author of this paper.
 
 \end{acknowledgements}
 
@@ -286,9 +162,10 @@ Professor Larry Smarr\\
 %
 \begin{vitapage}
 \begin{vita}
-  \item[2012] B.~S. in Biomedical Engineering, Universidad Iberoamericana, Ciudad de M\'exico
-  \item[2016] M.~Sc. in Computer Science, University of California, San Diego
-  \item[2017] Ph.~D. in Computer Science, University of California, San Diego 
+  \item[2014--2018] B.~A. in Mathematics, Colgate University
+  \item[2021] Software Engineering Intern, Thermo Fisher Scientific
+  \item[2021--2022] Bioinformatics Artificial Intelligence Intern, NVIDIA Corporation
+  \item[2018--2022] Ph.~D. in Bioinformatics and Systems Biology, University of California San Diego
 \end{vita}
 
 
@@ -296,87 +173,31 @@ Professor Larry Smarr\\
 
     \item \textsl{Author names marked with $\dagger$ indicate shared first co-authorship}.
 
-    \item \textbf{Y. V\'azquez-Baeza}, A. Gonzalez, M. Pirrung, R. Knight. ``Emperor: a tool for visualizing high throughput microbial community data'', \emph{GigaScience}, 2, 2013.
-
-    \item \textbf{Y. V\'azquez-Baeza}, A. Gonzalez, L. Smarr, D. McDonald, J. T. Morton, J. A. Navas-Molina, R. Knight. ``Bringing the Dynamic Microbiome to Life with Animations'', \emph{Cell Host and Microbe}, 11, 2017.
-
-    \item \textbf{Y. V\'azquez-Baeza}, E. R. Hyde, J. S. Suchodolski, R. Knight. ``Dog and human inflammatory bowel disease rely on overlapping yet distinct dysbiosis networks'', \emph{Nature Microbiology}, 1, 2016.
-
-    \item  $\dagger$S. Khanna, \textbf{$\dagger$Y. V\'azquez-Baeza}, A.  
-        Gonzalez, S. Weiss, B. Schmidt, D. A. Muñiz-Pedrogo, J. F. Rainey 3rd, 
-        P. Kammer, H. Nelson, M. Sadowsky, A. Khoruts, S. L. Farrugia, R.  
-        Knight, D. S. Pardi, P. C. Kashyap. ``Changes in microbial ecology 
-        after fecal microbiota transplantation for recurrent C. difficile 
-        infection affected by underlying inflammatory bowel disease'', 
-        \emph{Microbiome}. 5, 2017.
-
-    \item J. Halfvarson, C. J. Brislawn, R. Lamendella, \textbf{Y. V\'azquez-Baeza}, W. A. Walters, L. M. Bramer, M. D'Amato, F. Bonfiglio, D. McDonald, A. Gonzalez, E. E. McClure, M. F. Dunklebarger, R. Knight, J. K. Jansson. ``Dynamics of the human gut microbiome in inflammatory bowel disease'', \emph{Nature Microbiology}, 2, 2017.
-  
-    \item $\dagger$A. Weingarden, A. Gonzalez, \textbf{$\dagger$Y.  
-        V\'azquez-Baeza}, S. Weiss, G. Humphry, D. Berg-Lyons, D. Knights, T.  
-        Unno, A. Bobr, J. Kang, A. Khoruts, R. Knight, M. J. Sadowsky.  
-        ``Dynamic changes in short- and long-term bacterial composition 
-        following fecal microbiota transplantation for recurrent Clostridium 
-        difficile infection''. \emph{Microbiome}. 3, 2015.
-
-    \item \textbf{Y. V\'azquez-Baeza}, C. Callewaert, J. Debelius, E. Hyde, C. Marotz, J. T. Morton, A. Swafford, A. Vrbanac, P. C. Dorrestein and R. Knight. ``Impacts of the human gut microbiome in therapeutics''. \emph{Annual Reviews}. 58, 2017.
-
-    \item \textbf{Y. V\'azquez-Baeza}, A. Gonzalez, Z. Zech Xu, A. Washburne, 
-        H. Herfarth, R. B. Sartor, R. Knight. ``Guiding longitudinal sampling 
-        in inflammatory bowel diseases cohorts''. \emph{Gut}. 2017.
+    \item \textbf{George Armstrong}$\dagger$, Gibraan Rahman$\dagger$, Cameron Martino, Daniel McDonald, Antonio Gonzalez, Gal Mishne, and Rob Knight. ``Applications and Comparison of Dimensionality Reduction Methods for Microbiome Data.'' \textit{Frontiers in Bioinformatics 2}, 2022.
+    
+    \item \textbf{George Armstrong}, Kalen Cantrell, Shi Huang, Daniel McDonald, Niina Haiminen, Anna Paola Carrieri, Qiyun Zhu, Antonio Gonzalez, Imran McGrath, Kristen Beck, Daniel Hakim, Aki S Havulinna, Guillaume M\'eric, Teemu Niiranen, Leo Lahti, Veikko Salomaa, Mohit Jain, Michael Inouye, Austin D Swafford, Ho-Cheol Kim, Laxmi Parida, Yoshiki V\'azquez-Baeza and Rob Knight. ``Efficient computation of Faith's phylogenetic diversity with applications in characterizing microbiomes.'' \textit{Genome Research 31}, 2021.
+    
+    \item \textbf{George Armstrong}, Cameron Martino, Gibraan Rahman, Antonio Gonzalez, Yoshiki V\'azquez-Baeza, Gal Mishne, and Rob Knight. ``Uniform Manifold Approximation and Projection (UMAP) Reveals Composite Patterns and Resolves Visualization Artifacts in Microbiome Data.'' \textit{mSystems 6}, 2021.
+    
+    \item \textbf{George Armstrong}$\dagger$, Cameron Martino$\dagger$, Justin Morris, Behnam Khaleghi, Jaeyoung Kang, Jeff DeReus, Qiyun Zhu, Daniel Roush, Daniel McDonald, Antonio Gonzalez, Justin Shaffer, Carolina Carpenter, Mehrbod Estaki, Stephen Wandro, Sean Eilert, Ameen Akel, Justin Eno, Ken Curewitz, Austin D. Swafford, Niema Moshiri, Tajana Rosing, and Rob Knight. `Swapping metagenomics preprocessing pipeline components offers speed and sensitivity increases.''  \textit{mSystems e0137821}, 2022.
 
     \item \noindent\rule[0.5ex]{\linewidth}{0.5pt}
 
     \textsl{The following publications were not included as part of this dissertation, but were also significant byproducts of my doctoral training.}
 
-    \item C. A. Lozupone, J. Stombaugh, A. Gonzalez, G. Ackermann, D. Wendel, \textbf{Y. V\'azquez-Baeza}, J. K. Jansson, J. I. Gordon, R. Knight. ``Meta-analyses of studies of the human microbiota''. \emph{Genome Research}. 23, 2013.
+    \item Cameron Martino, Liat Shenhav, Clarisse A Marotz, \textbf{George Armstrong}, Daniel McDonald, Yoshiki V\'azquez-Baeza, James T Morton, Lingjing Jiang, Maria Gloria Dominguez-Bello, Austin D Swafford, Eran Halperin, Rob Knight. ``Context-aware dimensionality reduction deconvolutes gut microbial community dynamics.'' \textit{Nature biotechnology 39}, 2021.
+    
+    \item  Kalen Cantrell, Marcus W. Fedarko, Gibraan Rahman, Daniel McDonald, Yimeng Yang, Thant Zaw, Antonio Gonzalez, Stefan Janssen, Mehrbod Estaki, Niina Haiminen, Kristen L. Beck https://orcid.org/0000-0002-4603-0235, Qiyun Zhu, Erfan Sayyari, James T. Morton, \textbf{George Armstrong}, Anupriya Tripathi, Julia M. Gauglitz, Clarisse Marotz, Nathaniel L. Matteson, Cameron Martino, Jon G. Sanders, Anna Paola Carrieri, Se Jin Song, Austin D. Swafford, Pieter C. Dorrestein, Kristian G. Andersen, Laxmi Parida, Ho-Cheol Kim, Yoshiki Vázquez-Baeza, Rob Knight. ``EMPress Enables Tree-Guided, Interactive, and Exploratory Analyses of Multi-omic Data Sets.'' \textit{mSystems e01216-20}, 2021.
+    
+    \item Qiyun Zhu, Shi Huang, Antonio Gonzalez, Imran McGrath, Daniel McDonald, Niina Haiminen, \textbf{George Armstrong}, Yoshiki Vázquez-Baeza, Julian Yu, Justin Kuczynski, Gregory D. Sepich-Poore, Austin D. Swafford, Promi Das, Justin P. Shaffer, Franck Lejzerowicz, Pedro Belda-Ferre, Aki S. Havulinna, Guillaume Méric, Teemu Niiranen, Leo Lahti, Veikko Salomaa, Ho-Cheol Kim, Mohit Jain, Michael Inouye, Jack A. Gilbert, Rob Knight. ``Phylogeny-Aware Analysis of Metagenome Community Ecology Based on Matched Reference Genomes while Bypassing Taxonomy.'' \textit{mSystems e00167-22}, 2022.
+    
+    \item Clarisse Marotz, Pedro Belda-Ferre, Farhana Ali, Promi Das, Shi Huang, Kalen Cantrell, Lingjing Jiang, Cameron Martino, Rachel E Diner, Gibraan Rahman, Daniel McDonald, \textbf{George Armstrong}, Sho Kodera, Sonya Donato, Gertrude Ecklu-Mensah, Neil Gottel, Mariana C Salas Garcia, Leslie Y Chiang, Rodolfo A Salido, Justin P Shaffer, Karenina Sanders, Greg Humphrey, Gail Ackermann, Niina Haiminen, Kristen L Beck, Ho-Cheol Kim, Anna Paola Carrieri, Laxmi Parida, Yoshiki Vázquez-Baeza, Francesca J Torriani, Rob Knight, Jack Gilbert, Daniel A Sweeney, Sarah M Allard. ``SARS-CoV-2 detection status associates with bacterial community composition in patients and the hospital environment.'' \textit{Microbiome 9}, 2021.
+    
+    \item Igor Sfiligoi, \textbf{George Armstrong}, Antonio González, Daniel McDonald, Rob Knight. ``Optimizing UniFrac with OpenACC yields \>1000x speed increase''. \textit{Under Review at mSystems}, 2022.
+    
+    \item  Cameron Martino, Daniel McDonald, Kalen Cantrell, Amanda Hazel Dilmore, Yoshiki Vázquez-Baeza, Liat Shenhav, Justin P. Shaffer, Gibraan Rahman, \textbf{George Armstrong}, Celeste Allaband, Se Jin Song, Rob Knight. ``Compositionally aware phylogenetic beta-diversity measures better resolve microbiomes associated with phenotype.'' \textit{In Press at mSystems}, 2022.
+    
 
-    \item J. A. Navas-Molina, J. M. Peralta-S\'anchez, A. Gonzalez, P. J.  
-        McMurdie, \textbf{Y. V\'azquez-Baeza}, Z. Xu, L. K Ursell, C. Lauber, 
-        H. Zhou, S. Jin Song, J. Huntley, G. L Ackermann, D. Berg-Lyons, S.  
-        Holmes,. Gregory Caporaso, R. Knight. ``Advancing our understanding of 
-        the human microbiome using QIIME''. \emph{Methods in enzymology}. 531, 
-        2013.
-
-    \item G. E Flores, G. Caporaso, J. B Henley, J. R. Rideout, D. Domogala, J. Chase, J. W Leff, \textbf{Y. V\'azquez-Baeza}, A. Gonzalez, R. Knight, R. R. Dunn, N. Fierer. ``Temporal variability is a personalized feature of the human microbiome''. \emph{Genome biology}. 15, 2014.
-
-    \item S. Lax, D. P Smith, J. Hampton-Marcell, S. M Owens, K. M Handley, N. M Scott, S. M Gibbons, P. Larsen, B. D Shogan, S. Weiss, J. L Metcalf, L. K Ursell, \textbf{Y. V\'azquez-Baeza}, W. Van Treuren, N. A Hasan, M. K Gibson, R. Colwell, G. Dantas, R. Knight, J. A Gilbert. ``Longitudinal analysis of microbial interaction between humans and the indoor environment''. \emph{Science}. 345, 2014.
-
-    \item D. Gevers, S. Kugathasan, L. A Denson, \textbf{Y. V\'azquez-Baeza}, 
-        W. Van Treuren, B. Ren, E. Schwager, D. Knights, S. Jin Song, M.  
-        Yassour, X. C Morgan, A. D Kostic, C. Luo, A. Gonzalez, D. McDonald, Y.  
-        Haberman, T. Walters, S. Baker, J. Rosh, M. Stephens, M. Heyman, J.  
-        Markowitz, R. Baldassano, A. Griffiths, F. Sylvester, D. Mack, S. Kim, 
-        W. Crandall, J. Hyams, C. Huttenhower, R. Knight, R. J Xavier. ``The 
-        treatment-naive microbiome in new-onset Crohn's disease''. \emph{Cell 
-        Host \& Microbe}. 3, 2014.
-
-    \item $\dagger$A. Gonzalez, \textbf{$\dagger$Y. V\'azquez-Baeza}, R.  
-        Knight. ``SnapShot: the human microbiome''. \emph{Cell}. 158, 2014.
-
-    \item $\dagger$A. Gonzalez, \textbf{$\dagger$Y. V\'azquez-Baeza},  J. B. Pettengill, A. Ottesen, D. McDonald, R. Knight. ``Avoiding Pandemic Fears in the Subway and Conquering the Platypus''. \emph{mSystems}. 1, 2016.
-
-    \item R. A Quinn, J. A Navas-Molina, E. R Hyde, S. Jin Song, \textbf{Y. V\'azquez-Baeza}, G. Humphrey, J. Gaffney, J. J Minich, A. V Melnik, J. Herschend, J. DeReus, A. Durant, R. J Dutton, M. Khosroheidari, C. Green, R. da Silva, P. C Dorrestein, R. Knight ``From sample to Multi-Omics conclusions in under 48 Hours''. \emph{mSystems}. 1, 2016.
-
-    \item J. W Debelius, \textbf{Y. V\'azquez-Baeza}, D. McDonald, Z. Xu, E. Wolfe, R. Knight. ``Turning participatory microbiome research into usable data: lessons from the American Gut Project''. \emph{Journal of microbiology \& biology education}. 1, 2016.
-
-    \item J. Debelius, S. Jin Song, \textbf{Y. V\'azquez-Baeza}, Z. Zech Xu, A. Gonzalez, R. Knight. ``Tiny microbes, enormous impacts: what matters in gut microbiome studies?''. \emph{Genome Biology}. 17, 2017.
-
-    \item J. T Morton, J. Sanders, R. A Quinn, D. McDonald, A. Gonzalez, \textbf{Y. V\'azquez-Baeza}, J. A Navas-Molina, S. Jin Song, J. L Metcalf, E. R Hyde, M. Lladser, P. C Dorrestein, R. Knight. ``Balance trees reveal microbial niche differentiation''. \emph{mSystems}. 2, 2017.
-
-    \item S. Weiss, Z. Zech Xu, S. Peddada, A. Amir, K. Bittinger, A. Gonzalez, C. Lozupone, J. R. Zaneveld, \textbf{Y. V\'azquez-Baeza}, A. Birmingham, E. R Hyde, R. Knight ``Normalization and microbial differential abundance strategies depend upon data characteristics''. \emph{Microbiome}. 5, 2017.
-
-    \item L. R. Thompson, J. G. Sanders, D. McDonald, A. Amir, J. Ladau, K. J.  
-        Locey, R. J. Prill, A. Tripathi, S. M.  Gibbons, G. Ackermann, J. A.  
-        Navas-Molina, S. Janssen, E. Kopylova, \textbf{Y. V\'azquez-Baeza}, A.  
-        Gonzalez, J. T. Morton, S. Mirarab, Z. Z. Xu, L. Jiang, M. F.  Haroon, 
-        J.  Kanbar, Q.  Zhu, S. Song, T. Kosciolek, N. A. Bokulich J. Lefler, 
-        C. J.  Brislawn, G. Humphrey, S. M. Owens, J. Hampton-Marcell, D.  
-        Berg-Lyons, V. McKenzie, N. Fierer, J. A. Fuhrman, A. Clauset, R. L.  
-        Stevens, A.  Shade, K. S. Pollard, K. D. Goodwin, J. K. Jansson, J. A.  
-        Gilbert, R.  Knight and The Earth Microbiome Project Consortium. ``A 
-        communal catalogue reveals Earth’s multiscale microbial diversity''.
-        \emph{Nature}. 2017.
 \end{publications}
 
 \end{vitapage}
@@ -389,44 +210,11 @@ Professor Larry Smarr\\
 %
 \begin{abstract}
 
-    Technological developments in the past thirty years have transformed 
-    sequencing\hyp{}based microbiology into a data-intensive field. Here, 
-    computing and efficient representations are catalyzers of insight into 
-    omnipresent and complex microbial interactions. Notably, classical 
-    ecologists have set the foundations for the way we analyze these systems, 
-    with some techniques dating back to the beginning of the twentieth century.  
-    In this thesis, we expand and where possible reuse these techniques to 
-    unravel the hidden patterns comprising the human gut microbiome.
+Within the past decade, the number of publicly available microbiome sequencing samples has increased dramatically. Consequently, bottlenecks have arisen in common analysis steps, such as processing the sequencing data and characterizing the content of the microbial communities. Over this timespan, new tools have also been developed for steps such as alignment and dimensionality reduction that scale better or handle the additional complexity of high-dimensional data, however, their characteristics on microbiome data were previously uncharacterized. In this thesis, we accelerate the analysis of microbiomes by introducing new methods or benchmarking alternatives. Additionally, we compare the results of novel methodology to existing best-practices on gold-standard datasets to determine whether the methods adequately address the specific challenges of microbiome data.
 
-    To set an appropriate motivation and context for the rest of this work, 
-    Chapter 1 reviews recent discoveries on the human microbiome and how the 
-    communities within can influence the effectiveness of therapeutic agents.  
-    Next, in Chapter 2, we introduce EMPeror, an interactive analysis and 
-    visualization tool that is crucial to the findings presented in later 
-    chapters.
+In the first part of this thesis, Chapter 1 reviews many aspects of microbiome data that necessitate the use of microbiome-specific techniques for analyzing collections of microbial communities. Chapter 2 then introduces SFPhD, a novel approach for calculating phylogenetic alpha diversity that leverages the characteristics of microbiome data to speed up and reduce the memory requirements of a costly single-sample characterization.
 
-    The following three chapters study concrete examples where the microbiome
-    has been implicated as a driver or marker for dysbiosis. Chapter 3
-    describes how the microbial signature associated with \gls{cd} in humans,
-    described in our previous work \cite{RN154}, is overlapping but distinct to
-    that of dogs affected with \gls{ibd}. Surprisingly, unlike with humans, dog
-    fecal samples alone are strong indicators of the disease. In Chapter 4, we
-    study \gls{ibd} from a longitudinal perspective, revealing increased
-    volatility in the gut microbiomes of subjects with \gls{ibd}, a property
-    that does not appear to be present in unaffected controls. Furthermore, we
-    use this as a predicting feature of the disease, and improve on the
-    classification accuracy possible through a single fecal sample. In Chapter
-    5, we study the effect of \glspl{fmt} to treat \glspl{cdi} and, using the
-    techniques described in Chapter 2, we show the first animated visualization
-    of this process, a dramatic microbial transformation as the subjects
-    recover from all \gls{cdi} symptoms. In addition, for \gls{cdi} patients
-    who also suffer from a subtype of \gls{ibd}, a treatment with a \gls{fmt}
-    results in an increased number of relapses and decreased microbial
-    diversity.
-
-    The closing chapter discusses these results and their possible
-    applications, as well as future directions for computationally-centric
-    microbiome research.
+In the second part of the thesis, we apply recently developed tools for machine learning and sequencing pre-processing to demonstrate their potential for elucidating complex relationships in microbial data and reducing the lead time for supporting clinical applications of metagenomic sequencing, respectively. Chapter 3 demonstrates how Uniform Manifold Approximation and Projection (UMAP) provides succinct representations of data compared to the long-time standard method of microbial ecology, Principal Coordinates Analysis (PCoA). Importantly, UMAP provides different guarantees about the preservation of local/global geometry in its representation and careful consideration should be given to its application. In Chapter 4, we show that the \textit{de facto} metagenomic preprocessing pipeline of Atropos for adapter trimming and Bowtie2 for host filtering can be replaced by a substantially faster combination of Fastp and Minimap2, respectively. Furthermore, we have determined that the results this new pipeline produces are qualitatively comparable to the outputs produced by the original pipeline.
 
 \end{abstract}
 

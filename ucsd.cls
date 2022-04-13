@@ -203,7 +203,7 @@
 %%%
 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{ucsd}[2010/06/01 V3.7 University of California, San Diego, Dissertation Class]
+\ProvidesClass{ucsd}[2010/06/01 V3.7 University of California San Diego, Dissertation Class]
 
 
 %    ****************************************
@@ -474,7 +474,7 @@
     \null\vfil
   \begin{center}
     \fmfont
-    UNIVERSITY OF CALIFORNIA, {\expandafter\uppercase\expandafter{\@campus}}\par
+    UNIVERSITY OF CALIFORNIA {\expandafter\uppercase\expandafter{\@campus}}\par
     \bigskip \medskip
     {\bfseries
      {\@title} \par}
@@ -542,7 +542,7 @@ All rights reserved.}
 % (EVM, 9/19/94)
 
 \phantomsection
-\addcontentsline{toc}{frontmatter}{\protect\numberline{}Signature Page}%
+\addcontentsline{toc}{frontmatter}{\protect\numberline{}Dissertation Approval Page}%
 \begin{alwayssingle}
 \null\vfill
 \begin{center}
@@ -550,34 +550,34 @@ All rights reserved.}
 \vspace{\@approvalspace}
 \makebox[4in][l]{\parbox{4in}{\fmfont The dissertation of {\@author}
 is approved, and it is acceptable in quality and form for publication
-on microfilm and electronically: }}\\
+on microfilm and electronically. }}\\
 \begin{tabular*}{4in}[t]{r@{\extracolsep{\fill}}r}
 & \rule{0pt}{\@approvalspace} \\
-\hline
+% \hline
 \ifnum \@numberofmembers > 2
   & \rule{0pt}{\@approvalspace} \\
-  \hline
+%   \hline
 \fi
 \ifnum \@numberofmembers > 3
   & \rule{0pt}{\@approvalspace} \\
-  \hline
+%   \hline
 \fi
 \ifnum \@numberofmembers > 4
   & \rule{0pt}{\@approvalspace} \\
-  \hline
+%   \hline
 \fi
 \ifnum \@numberofmembers > 5
   & \rule{0pt}{\@approvalspace} \\
-  \hline
+%   \hline
 \fi
 \ifnum \@numberofmembers > 6
   & \rule{0pt}{\@approvalspace} \\
-  \hline
+%   \hline
 \fi
 
 \ifx\UCSD@cochair\@isnotdefined% No cochair
   &\rule{0pt}{\@approvalspace} \\
-  \hline
+%   \hline
 \else% Cochair
   &
   % Add the Co-Chair label below the last line and make
@@ -587,13 +587,13 @@ on microfilm and electronically: }}\\
   \setlength{\@tempapprovalspace}{-\@tempapprovalspace}
   \addtolength{\@tempapprovalspace}{-2pt}
   \raisebox{\@approvalspace}[\@approvalspace][0pt]%
-  {\raisebox{\@tempapprovalspace}{\UCSD@text@cochair}}\\
-  \hline
+  {\raisebox{\@tempapprovalspace}{\UCSD@text}}\\
+%   \hline
 \fi
 
-& \UCSD@text@chair
+& \UCSD@text
 \end{tabular*}\\[\@approvalspace]
-{\fmfont University of California, {\@campus}} \\
+{\fmfont University of California {\@campus}} \\
 \vspace{-.25in}
 \vspace{\@approvalspace}
 {\fmfont \@degreeyear}
@@ -720,7 +720,7 @@ on microfilm and electronically: }}\\
   \fi
   \par
   \vspace{.3in}
-  University of California, {\@campus}, \@degreeyear \par
+  University of California {\@campus}, \@degreeyear \par
   \vspace{.3in}
   {\UCSD@chair}, \UCSD@text@chair
   %Check if there is a co-chair and add accordingly.

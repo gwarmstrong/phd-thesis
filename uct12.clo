@@ -114,12 +114,12 @@
 
 % SIDE MARGINS:
 \if@twoside               % Values for two-sided printing:
-   \oddsidemargin 0.5in   %   Left margin on odd-numbered pages.
+   \oddsidemargin 0.6in   %   Left margin on odd-numbered pages.
    \evensidemargin 0.0in  %   Left margin on even-numbered pages.
    \marginparwidth 0pt    %   Width of marginal notes.
 \else                     % Values for one-sided printing:
-   \oddsidemargin 0.6in   %   Note that \oddsidemargin = \evensidemargin
-   \evensidemargin 0.6in
+   \oddsidemargin 0.03in   %   Note that \oddsidemargin = \evensidemargin, G.A. o.g., was 0.6
+   \evensidemargin 0.03in % G.A. o.g., was 0.6
    \marginparwidth 1.0in
 \fi
 \marginparsep 10pt        % Horizontal space between outer margin and 
@@ -148,7 +148,8 @@
  
 \textheight = 29\baselineskip
 \advance\textheight by \topskip
-\textwidth 5.8 truein     % Width of text line.
+% \textwidth 5.8 truein     % Width of text line.
+\textwidth 6.4 truein     % Width of text line.
                          % For two-column mode: 
 \columnsep 10pt          %    Space between columns 
 \columnseprule 0pt       %    Width of rule between columns.
